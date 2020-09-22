@@ -1,5 +1,8 @@
 # variant-summary-from-vcf
 
+This is a fork of Keith Curtis' variant-summary-from-vcf toolkit. I added minor changes to the built to remove dependancy on LLVM 5.0.x because
+it's not available anymore since the bioinc upgrade. 
+
 This is a utility to generate summary information about variants in an imputed VCF file.  It assumes the VCF file has the following fields in its header:
 
  * ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
@@ -12,8 +15,11 @@ and so the format column will look like:
 ## Building
 
 To build the program, you will need LLVM 5.0. I built this project in a computing environment with 
- * GCC version 6.4.0-2.28
- * LLVM version 5.0.1, most likely built specifically for GCC-6.4.0
+ * GCC version 7.3.0-2.30 works fine
+ * NOT NEEDED: LLVM version 5.0.1, most likely built specifically for GCC-6.4.0 
+ If you want to use LLVM to benefit from a speed boost, please use the version from Keith's Github:
+ https://github.com/krcurtis/variant-summary-from-vcf
+   
 
 You will also need the Haskell stack build tool, see installation instructions at:
  * https://docs.haskellstack.org/en/stable/README/#how-to-install
